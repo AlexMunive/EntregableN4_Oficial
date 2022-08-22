@@ -1,0 +1,98 @@
+.form-none {
+    display: none;
+  }
+  .form-container {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(172, 172, 172, 0.5);
+  }
+ 
+.form-none-A {
+    display: none;
+  }
+  .form-container-A {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(172, 172, 172, 0.5);
+  }
+
+  .circleB{
+    position: relative;
+    top: 8px;
+    left: 250px;
+    padding: 0;
+  }
+ .form_label{
+    font-size: 22px;
+    padding-bottom: 2px;
+    color: rgb(6, 0, 41);
+ }
+ .form_h4_circle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+ 
+ }
+ .App{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+.reloj{
+    border-radius: 5px;
+    border: 1px solid #aaa9;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+ .hora{
+  font-size: 40px;
+  color: rgb(17, 16, 20);
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+ }
+ .fecha{
+  font-size: 20px;
+  color: rgb(39, 38, 39);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+ }
+
+ #light {
+  background-color: #f3ebf6;
+}
+
+#dark {
+  background-color: #46045e;
+}
+
+
+
