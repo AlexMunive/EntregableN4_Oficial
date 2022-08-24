@@ -13,6 +13,7 @@ function App() {
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [isFromConfirmation, setIsFromConfirmation] = useState(false)
   const [usersDelete, setUsersDelete] = useState()
+  const [page, setPage] = useState(0)   // estado para la pagina
   
 
   const getAllUsers = () => {
@@ -39,8 +40,23 @@ function App() {
 
   const off = () => setIsFromConfirmation(false)
 
-
   console.log(users)
+
+  // paginación
+
+  const maxItem = 6;
+  const totalItems = users?.length;
+  const maxPage = Math.ceil(totalItems / maxItem);
+
+   //creamos dos funciones para aumentar y disminuir las paginas, no los items
+   const onNextPage = () => {
+    setPage((page + 1) % maxPage);
+  };
+  const onPrevPage = () => {
+    setPage((page - 1) % maxPage);
+  };
+
+  // console.log(page)
 
   return (
     <div className="App">
@@ -61,7 +77,7 @@ function App() {
       </div>
       <div className='App_user_A'>
         {          
-         users?.map(user => (
+         users?.slice(page * maxItem, maxItem * (page + 1)).map(user => (
             <CardUser
               key={user.id}
               user={user}
@@ -73,9 +89,32 @@ function App() {
             />
           ))
         }
+        
+      </div>
+      <div>
+      <button
+        onClick={onPrevPage}
+        disabled={
+          // si page viene en 0 lo desactivamos
+          !page
+        }
+      >
+        Prev
+      </button>
+      <button
+        onClick={onNextPage}
+        disabled={
+          // si page es igual al ultimo se desactiva el boton
+          page === Math.ceil(totalItems / maxItem) - 1
+        }
+      >
+        Next
+      </button>
+      <p>
+        {page + 1} of {maxPage}
+      </p>
       </div>
       <div className={isFromConfirmation ? 'form-container-A' : 'form-none-A'}>
-
         <Confirmation
           off={off}
           usersDelete={usersDelete}
