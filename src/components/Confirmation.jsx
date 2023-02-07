@@ -8,7 +8,7 @@ const Confirmation = ({ off,usersDelete,getAllUsers}) => {
 
     const deleteUser = (e) => {
         e.preventDefault()
-        const URL = `http://users-crud.academlo.tech/users/${usersDelete.id}/`
+        const URL = `https://users-crud.academlo.tech/users/${usersDelete.id}/`
         axios.delete(URL)
           .then(res => {
             console.log(res.data)
