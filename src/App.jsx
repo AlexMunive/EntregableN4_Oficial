@@ -17,11 +17,12 @@ function App() {
   
 
   const getAllUsers = () => {
-    const url = "https://users-crud1.herokuapp.com/users/"
+    const url = "http://users-crud.academlo.tech/users/"
     axios.get(url)
       .then(res => setUsers(res.data))
       .catch(err => console.log(err))
   }
+ 
 
   useEffect(() => {
     getAllUsers()
